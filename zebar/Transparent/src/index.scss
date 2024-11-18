@@ -1,0 +1,107 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+:root {
+  --font-size: 14px;
+}
+
+* {
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+body {
+  font-family: ui-monospace, monospace;
+  font-size: var(--font-size);
+  color: var(--color);
+  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  border-bottom: 1px solid var(--border-color);
+  background: var(--background-color);
+}
+
+button:focus {
+  outline: none;
+}
+
+.app {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 4px 1.5vw;
+  display: grid;
+  height: 100%;
+}
+
+.center,
+.right,
+.left {
+  align-items: center;
+  display: flex;
+}
+
+.left {
+  justify-self: start;
+}
+
+.center {
+  justify-self: center;
+}
+
+.right {
+  justify-self: end;
+
+  .MuiChip-root {
+    margin-right: 4px;
+  }
+}
+
+.memory .high-usage,
+.cpu .high-usage {
+  color: #900029;
+}
+
+.battery {
+  position: relative;
+}
+
+.battery .charging-icon {
+  font-size: calc(var(--font-size) - 7px);
+  position: absolute;
+  left: 5px;
+  top: 7px;
+}
+
+.network-speed-icon {
+  font-size: calc(var(--font-size) - 2px);
+  position: relative;
+  margin-right: 3px;
+  top: -2px;
+}
+
+.network-icon {
+  font-size: calc(var(--font-size) + 4px);
+  margin-right: 2px;
+}
+
+.tiling-direction-icon {
+  font-size: calc(var(--font-size) + 2px);
+  transition: rotate 0.15s ease-in-out;
+  display: inline-block;
+}
+
+.tiling-direction-horizontal {
+  .tiling-direction-icon {
+    rotate: 90deg;
+  }
+}
