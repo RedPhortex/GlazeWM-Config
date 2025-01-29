@@ -3,16 +3,19 @@ import { useState, useEffect } from "react";
 import { log } from "../../assets/utils";
 
 const providers = createProviderGroup({
-  network: { type: "network", refreshInterval: 500 },
+  audio: { type: "audio", refreshInterval: 5000 },
+  battery: { type: "battery", refreshInterval: 30000 },
   cpu: { type: "cpu", refreshInterval: 750 },
   date: { type: "date", formatting: "EEE dd MMM hh:mm" },
-  battery: { type: "battery", refreshInterval: 30000 },
-  memory: { type: "memory", refreshInterval: 1000 },
-  keyboard: { type: "keyboard" },
   glazewm: { type: "glazewm" },
-  weather: { type: "weather", refreshInterval: 60000 * 5 },
   host: { type: "host" },
   ip: { type: "ip" },
+  media: { type: "media", refreshInterval: 5000 },
+  memory: { type: "memory", refreshInterval: 1000 },
+  network: { type: "network", refreshInterval: 500 },
+  weather: { type: "weather", refreshInterval: 60000 * 5 },
+  keyboard: { type: "keyboard" },
+  disk: { type: "disk", refreshInterval: 10000 },
 });
 
 const useProvider = () => {

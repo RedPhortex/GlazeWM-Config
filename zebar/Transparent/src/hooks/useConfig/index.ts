@@ -6,13 +6,13 @@ const useConfig = () => {
   const [config, setConfig] = useState<ZebarConfig>();
 
   useEffect(() => {
-    log("[useConfig]", "Loading Config...");
+    log("useConfig", "Loading Config...");
 
     fetch("../main.zebar.json")
       .then((res) => res.json())
       .then(({ $schema, ...data }: { $schema: string } & ZebarConfig) => {
         setConfig(data);
-        log("[useConfig]", "Loaded Config:", data);
+        log("useConfig", "Loaded Config:", data);
       });
   }, []);
 

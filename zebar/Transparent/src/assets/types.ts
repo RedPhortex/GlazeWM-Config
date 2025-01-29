@@ -5,7 +5,30 @@ export type ZebarConfig = {
   focused: boolean;
   resizable: boolean;
   transparent: boolean;
+  caching: Caching;
+  privileges: Privileges;
   presets: Preset[];
+};
+
+export type ZOrder = "top_most" | "normal" | "bottom_most";
+
+export type Caching = {
+  defaultDuration: number;
+  rules: CachingRule[];
+};
+
+export type CachingRule = {
+  urlRegex: string;
+  duration: number;
+};
+
+export type Privileges = {
+  shellCommands: ShellCommand[];
+};
+
+export type ShellCommand = {
+  program: string;
+  argsRegex: string;
 };
 
 export type Preset = {
@@ -16,9 +39,8 @@ export type Preset = {
   width: string;
   height: string;
   monitorSelection: MonitorSelection;
+  dockToEdge: DockToEdge;
 };
-
-export type ZOrder = "top_most" | "normal" | "bottom_most";
 
 export type Anchor =
   | "top_left"
@@ -31,4 +53,10 @@ export type Anchor =
 
 export type MonitorSelection = {
   type: "all" | "primary" | "secondary";
+};
+
+export type DockToEdge = {
+  enabled: boolean;
+  edge: null | "top" | "left";
+  windowMargin: string;
 };

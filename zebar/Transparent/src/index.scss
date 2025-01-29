@@ -67,19 +67,9 @@ button:focus {
 }
 
 .memory .high-usage,
+.disk .high-usage,
 .cpu .high-usage {
   color: #900029;
-}
-
-.battery {
-  position: relative;
-}
-
-.battery .charging-icon {
-  font-size: calc(var(--font-size) - 7px);
-  position: absolute;
-  left: 5px;
-  top: 7px;
 }
 
 .network-speed-icon {
